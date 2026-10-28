@@ -151,7 +151,7 @@ footer.mainFooter {
     font-size: 0.9rem;
 }
 
-/* ======== MEDIA QUERY PARA TABLETS ======== */
+/* ======== MEDIA QUERY PARA TABLETS (HOME) ======== */
 
 @media screen and (max-width: 1024px) {
 
@@ -189,7 +189,7 @@ footer.mainFooter {
     }
 }
 
-/* ======== MEDIA QUERY PARA CELULARES ======== */
+/* ======== MEDIA QUERY PARA CELULARES (HOME) ======== */
 
 @media screen and (max-width: 600px) {
 
@@ -244,8 +244,9 @@ footer.mainFooter {
 }
 
 
-/* -------------- Estilos del login de la app --------------*/
+/* -------------- ESTILOS DEL LOGIN DE LA APP -------------- */
 
+/* 3. Normal (más de 800px): Imagen de fondo principal con transición suave */
 body.bodylogin{
     display: flex;
     justify-content: center;
@@ -254,6 +255,7 @@ body.bodylogin{
     background: url('../imagenes/bg.avif') no-repeat;
     background-size: cover;
     background-position: center;
+    transition: background 0.5s ease, background-color 0.5s ease;
 }
 
 .wrapper{
@@ -265,6 +267,7 @@ body.bodylogin{
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
+    transition: width 0.3s ease, padding 0.3s ease;
 }
 
 .wrapper h1{
@@ -353,4 +356,35 @@ body.bodylogin{
 
 .register-link p a:hover{
     text-decoration: underline;
+}
+
+/* -------------- MEDIA QUERIES DEL LOGIN -------------- */
+
+/* 2. Pantallas medianas (hasta 800px): Mantiene bg.avif adaptada */
+@media screen and (max-width: 800px) {
+    body.bodylogin {
+        background-image: url('../imagenes/bg.avif'), url('../imagenes/bg.avif')[cite: 4, 8];
+        background-position: top center, bottom center;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 100% 30vh, 100% 30vh;
+        background-color: #110f16;
+    }
+}
+
+/* 1. Pantallas pequeñas (hasta 450px): Fondo #333 y caja responsiva */
+@media screen and (max-width: 450px) {
+    body.bodylogin {
+        background: #333 !important;
+    }
+
+    .wrapper {
+        width: 90%;
+        padding: 25px 20px;
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    .wrapper .btn {
+        width: 100%;
+        height: 45px;
+    }
 }
